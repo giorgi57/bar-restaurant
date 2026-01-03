@@ -84,3 +84,31 @@ body { background: var(--bg); color: var(--text); transition: 0.4s; line-height:
 @media (max-width: 1200px) { .gallery-grid, .menu-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; text-align: center; } .socials { justify-content: center; } .gallery-grid, .menu-grid { grid-template-columns: repeat(2, 1fr); } .sidebar { width: 100%; } }
 @media (max-width: 480px) { .gallery-grid, .menu-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } }
+
+/* === GOOGLE TRANSLATE STYLES (ADDED) === */
+#google_translate_element {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: 1px solid var(--gold) !important;
+    padding: 3px 8px !important;
+    border-radius: 5px !important;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.goog-te-gadget-simple span {
+    color: var(--gold) !important;
+    font-size: 12px !important;
+    text-transform: uppercase;
+}
+
+.goog-te-gadget-icon, .goog-te-banner-frame {
+    display: none !important;
+}
+
+body { top: 0px !important; }
