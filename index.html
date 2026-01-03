@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Palace | Luxury Dining</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+    <header class="header">
+        <div class="container header-flex">
+            <a href="#" class="logo">GOURMET<span>PALACE</span></a>
+            <nav class="nav">
+                <a href="#gallery">ინტერიერი</a>
+                <a href="#menu">მენიუ</a>
+                <div class="theme-switch" onclick="toggleMode()">
+                    <i class="fas fa-moon" id="mode-icon"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>დახვეწილი გემოვნება</h1>
+            <p>პრემიუმ ხარისხის კერძები და სასმელები</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <section id="gallery" class="section-padding">
+            <h2 class="title">ინტერიერი</h2>
+            <div class="gallery-grid">
+                <div class="g-card"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800" onclick="openFullImg(this.src)"></div>
+                <div class="g-card"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800" onclick="openFullImg(this.src)"></div>
+                <div class="g-card"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" onclick="openFullImg(this.src)"></div>
+                <div class="g-card"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800" onclick="openFullImg(this.src)"></div>
+                <div class="g-card"><img src="https://images.unsplash.com/photo-1550966842-30c2768d4821?w=800" onclick="openFullImg(this.src)"></div>
+            </div>
+        </section>
+
+        <section id="menu" class="section-padding">
+            <h2 class="title">მენიუ</h2>
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterMenu('all', this)">ყველა</button>
+                <button class="filter-btn" onclick="filterMenu('food', this)">კერძები</button>
+                <button class="filter-btn" onclick="filterMenu('drink', this)">სასმელები</button>
+                <button class="filter-btn" onclick="filterMenu('dessert', this)">დესერტები</button>
+            </div>
+            <div id="menu-grid" class="menu-grid"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3 class="logo">GOURMET<span>PALACE</span></h3>
+                <p>საუკეთესო ადგილი დაუვიწყარი დროის გასატარებლად.</p>
+            </div>
+            <div class="footer-section">
+                <h4>კონტაქტი</h4>
+                <p><i class="fas fa-map-marker-alt"></i> თბილისი, საქართველო</p>
+                <p><i class="fas fa-phone"></i> +995 555 12 34 56</p>
+            </div>
+            <div class="footer-section">
+                <h4>მოგვყევით</h4>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Gourmet Palace | ყველა უფლება დაცულია</p>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox" onclick="closeFullImg()">
+        <span class="close-light">&times;</span>
+        <img id="light-img" src="">
+    </div>
+
+    <div id="cart-sidebar" class="sidebar">
+        <div class="sidebar-head">
+            <h3>თქვენი შეკვეთა</h3>
+            <span class="close-sidebar" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="sidebar-body">
+            <div class="user-info">
+                <input type="text" id="cust-name" placeholder="თქვენი სახელი">
+                <input type="text" id="table-num" placeholder="მაგიდა #">
+            </div>
+            <div id="cart-items-list"></div>
+        </div>
+        <div class="sidebar-footer">
+            <div class="total-box">
+                <span>ჯამური ღირებულება:</span> 
+                <strong><span id="cart-total">0</span> ₾</strong>
+            </div>
+            <button class="whatsapp-btn" onclick="sendToWhatsApp()">
+                <i class="fab fa-whatsapp"></i> შეკვეთის გაგზავნა
+            </button>
+        </div>
+    </div>
+
+    <div class="cart-float" onclick="toggleCart()">
+        <i class="fas fa-shopping-bag"></i>
+        <span id="cart-count">0</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
